@@ -18,3 +18,21 @@
 /** End of styles for the second page **/
 
 
+/** Styles for the third page **/
+.container-fluid.third-page {
+    background-image: url('../images/walpaper.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh
+}
+/** End of styles for the third page **/
+
+
+/** Styles for the fourth page **/
+.container-fluid.fourth-page {
+    background-image: url("https://64.media.tumblr.com/4af4aaeaec397b25fe27cbd791cec7ea/b17a5b9cd5f63ba7-a3/s540x810/c324517076f6fbae750375093476fcd91ce1133b.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh
+}
+/** End of styles for the third page **/

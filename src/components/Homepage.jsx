@@ -1,5 +1,6 @@
 import React from 'react';
 import './styles/Homepage.css';
+import Miniature from './images/gameplay.jpg';
 
 const Homepage = () => {
     return (
@@ -12,15 +13,31 @@ const Homepage = () => {
                         <div className="col-12">
                             <div clasName="title">
                                 <h1> MORTAL <span id="number"> 1 </span> KOMBAT </h1>
-                                <h6>Preventa ya disponible</h6>
+                                <h6>Presale now available</h6>
                             </div>
                         </div>
                     </div>
                 </div>
                 {/** End of block of code for the first page */}
 
+
                 {/** Block of code for the second page */}
-                <div className="container-fluid second-page  d-flex justify-content-center align-items-center">
+                <div className="container-fluid d-flex second-page justify-content-center align-items-center">
+                    <div className="row">
+                        <div className="col-12">
+                            <h2> WATCH THE LAUNCH TRAILER </h2>  
+                    
+                            <a href="https://www.youtube.com/watch?v=jnVTPkCWzcI" target="blank"> <img src={ Miniature } alt="A preview of the video"/> </a>
+                            
+                            <p> Kombat mechanics never seen before </p>
+                        </div>
+                    </div>
+                </div>
+                {/** End of block of code for the second page */}
+
+
+                {/** Block of code for the third page */}
+                <div className="container-fluid third-page d-flex justify-content-center align-items-center">
                     <div className="row">
                         <div className="col-6 left-side">
                             <div className="text">
@@ -34,7 +51,25 @@ const Homepage = () => {
                         </div>
                     </div>
                 </div>
-                {/** End of block of code for the second page */}
+                {/** End of block of code for the third page */}
+
+                
+                {/** Block of code for the fourth page */}
+                <div className="container-fluid fourth-page d-flex justify-content-center align-items-center">
+                    <div className="row">
+                        <div className="col-12">
+                            <div class="text">
+                                <h2 class="title"> Shang Tsung disponible como personaje jugable.</h2>
+                                <h2 class="title"> Exclusivo al preordenar </h2>
+                                <button> Pre-ordena ahora </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {/** End of block of code for the fourth page */}
+
+
+
 
 
             </main>
