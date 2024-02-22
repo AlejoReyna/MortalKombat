@@ -11,3 +11,8 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+@font-face {
+  font-family: Mortal;
+  src: url("./components/fonts/Mortal-Kombat-MK11.otf");
+}

@@ -1,0 +1,17 @@
+.nav-items {
+    list-style-type: none;
+    font-family: 'Mortal';
+    color: white;
+}
+
+.nav-item {
+    margin: 0 2rem;
+}
+
+.logo {
+    border-radius: 50%;
+    width: 160px;
+    height: 150px;
+}
+
+
