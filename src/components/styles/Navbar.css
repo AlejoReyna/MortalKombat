@@ -1,3 +1,4 @@
+
 .nav-items {
     list-style-type: none;
     font-family: 'Mortal';
@@ -14,4 +15,18 @@
     height: 150px;
 }
 
+@media screen and (max-width:768px) {
+    .nav-item {
+        display: none;
+    }
 
+    .navbar {
+        height: 4rem;
+    }
+
+    .logo {
+        border-radius: 50%;
+        width: 110px;
+        height: 110px;
+    }
+}

@@ -58,19 +58,15 @@ const Homepage = () => {
                 <div className="container-fluid fourth-page d-flex justify-content-center align-items-center">
                     <div className="row">
                         <div className="col-12">
-                            <div class="text">
-                                <h2 class="title"> Shang Tsung disponible como personaje jugable.</h2>
-                                <h2 class="title"> Exclusivo al preordenar </h2>
+                            <div className="text">
+                                <h2 className="title"> Shang Tsung disponible como personaje jugable.</h2>
+                                <h2 className="title"> Exclusivo al preordenar </h2>
                                 <button> Pre-ordena ahora </button>
                             </div>
                         </div>
                     </div>
                 </div>
                 {/** End of block of code for the fourth page */}
-
-
-
-
 
             </main>
         </body>
