@@ -2,6 +2,28 @@
 .title {
     font-family: 'Mortal';
 }
+
+
+.title h1 {
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-color:white;
+    background-image: url("https://giffiles.alphacoders.com/209/209473.gif");
+}
+
+/** Applies fire effect to the h6 phrase **/
+.title h6 {
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-color:rgb(10, 10, 10);
+    -webkit-text-stroke-width: x;
+    background-image: url("https://media.tenor.com/xAWNbezUQNcAAAAd/fire-hell-fire.gif");
+}
+
 /** Styles for the first page **/
 .container-fluid.first-page {
     background-image: url("https://giffiles.alphacoders.com/209/209473.gif");
