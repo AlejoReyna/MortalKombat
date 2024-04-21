@@ -16,6 +16,9 @@ const Homepage = () => {
                                 
                                 <h1> MORTAL <span id="number"> 1 </span> KOMBAT </h1> 
                                 <h6 className='d-flex justify-content-center'>Presale now available</h6>
+                                    <div className="d-flex justify-content-center">
+                                        <button> <Link to="/preorder"> Preorder now! </Link>  </button>
+                                    </div>
                             </div>
                         </div>
                     </div>
@@ -36,14 +39,15 @@ const Homepage = () => {
                             <p> Kombat mechanics never seen before </p>
     **/}
                         </div>
+
                         <div className="row">
-                            <div className="col-6 d-flex justify-content-center align-items-center">
+                            <div className="col-sm-6-md-">
                                 <figure>
                                 <img className="preview" src={ Preview  } alt="The preview of the trailer"/>
                                 <figcaption> Click to watch the trailer </figcaption>
                                 </figure>
                             </div>
-                            <div className="col-6">
+                            <div className="col-sm-6-md-12">
                                 <p className="description"> 
                                 After winning control of the Hourglass, Liu Kang becomes the Keeper of Time, forging a New Era. 
                                 Peace between realms is disrupted by mounting tensions and a mysterious adversary. 
@@ -61,8 +65,9 @@ const Homepage = () => {
                     <div className="row">
                         <div className="col-12">
                             <div className="text">
-                                <h2 className="title"> Shang Tsung disponible como personaje jugable.</h2>
-                                <h2 className="title"> Exclusivo al preordenar </h2>
+                                <h2 className="title d-flex justify-content-center"> Shang Tsung availabe as playable character</h2>
+                                <h2 className="title d-flex justify-content-center"> Exclusive to pre-order </h2>
+                            
                                 <div className='button-container d-flex justify-content-center' >
                                 <button> Pre-ordena ahora </button>
                                 </div>

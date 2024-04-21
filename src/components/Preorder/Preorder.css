@@ -1,0 +1,12 @@
+.preorder-page {
+    background-image: url('./Images/stage.jpg');
+    height: 100vh;
+    background-size: cover;
+}
+
+.img {
+    width: 200px;
+}
+p{
+    color: white;
+} 

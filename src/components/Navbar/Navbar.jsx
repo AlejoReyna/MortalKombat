@@ -7,7 +7,7 @@ const Navbar = () => {
 return (
     <nav className="navbar-container d-flex align-items-center">
         <div className="container-fluid">
-            <Link className="navbar-brand" href="#">
+            <Link className="navbar-brand" to="/">
                 <img className="mk-logo" src={Logo} />
             </Link>
     </div>

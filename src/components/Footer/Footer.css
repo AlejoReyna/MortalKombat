@@ -23,3 +23,14 @@ footerText {
 .footerItem {
     width: 100px;
 }
+
+
+@media screen and (max-width:468px) {
+    .footerItem {
+        width: 50px;
+    }
+
+    .footerText {
+        font-size: 10px;
+    }
+}

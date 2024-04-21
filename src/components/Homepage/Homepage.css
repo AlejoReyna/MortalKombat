@@ -8,7 +8,6 @@
     border-radius: 3px;
 }
 
-
 .title #number {
     font-size: 90px;
 }
@@ -20,8 +19,9 @@
     color: white;
     font-family: Mortal;
 }
+
 .title h1 {
-    font-size: 3rem;
+    font-size: 3.5rem;
     color: transparent;
     -webkit-background-clip: text;
     background-clip: text;
@@ -32,7 +32,7 @@
 
 /** Applies fire effect to the h6 phrase **/
 .title h6 {
-    font-size: 1.2rem;
+    font-size: 1.7rem;
     color: transparent;
     -webkit-background-clip: text;
     background-clip: text;
@@ -89,7 +89,15 @@
 /** End of styles for the third page **/
 
 @media screen and (max-width:468px) {
-    .container-fluid.first-page {
-        background-position: 85%;
+    .title h1 {
+        font-size: 2.5rem;
+    }
+
+    .title h6 {
+        font-size: 1.4rem
+    }
+
+    .fourth-page .title {
+        font-size: 1.4rem;
     }
 }

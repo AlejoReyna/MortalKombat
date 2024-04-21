@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar/Navbar';
 import Homepage from './components/Homepage/Homepage';
 import Footer from './components/Footer/Footer';
+import Preorder from './components/Preorder/Preorder';
 import './App.css';
 
 function App() {
@@ -11,6 +12,7 @@ function App() {
       <Navbar/>
       <Routes>
         <Route path="/" element={<Homepage/>} />
+        <Route path="/preorder" element={<Preorder />} /> 
       </Routes>
       <Footer/>
     </Router>
