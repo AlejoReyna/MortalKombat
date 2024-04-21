@@ -1,6 +1,6 @@
 import React from 'react';
-import './styles/Homepage.css';
-import Miniature from './images/gameplay.jpg';
+import './Homepage.css';
+import Miniature from './gameplay.jpg';
 
 const Homepage = () => {
     return (
@@ -11,9 +11,9 @@ const Homepage = () => {
                 <div className="container-fluid first-page  d-flex justify-content-center align-items-center">
                     <div className="row">
                         <div className="col-12">
-                            <div clasName="title">
+                            <div className="title">
                                 <h1> MORTAL <span id="number"> 1 </span> KOMBAT </h1>
-                                <h6>Presale now available</h6>
+                                <h6 className='d-flex justify-content-center'>Presale now available</h6>
                             </div>
                         </div>
                     </div>
