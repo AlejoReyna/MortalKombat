@@ -26,7 +26,7 @@
 
 /** Styles for the first page **/
 .container-fluid.first-page {
-    background-image: url("./Images/gold.jpeg");
+    background-image: url("https://giffiles.alphacoders.com/209/209473.gif");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -72,3 +72,9 @@
     height: 100vh
 }
 /** End of styles for the third page **/
+
+@media screen and (max-width:468px) {
+    .container-fluid.first-page {
+        background-position: 85%;
+    }
+}
