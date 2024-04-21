@@ -2,7 +2,7 @@ import React from 'react';
 import './Homepage.css';
 import Miniature from './gameplay.jpg';
 import './animation.css';
-import Logo from './Images/mk-logo.png';
+import { Link } from 'react-router-dom';
 
 const Homepage = () => {
     return (
@@ -28,11 +28,13 @@ const Homepage = () => {
                 <div className="container-fluid d-flex second-page justify-content-center align-items-center">
                     <div className="row">
                         <div className="col-12">
+                            {/** 
                             <h2> WATCH THE LAUNCH TRAILER </h2>  
                     
-                            <a href="https://www.youtube.com/watch?v=jnVTPkCWzcI" target="blank"> <img src={ Miniature } alt="A preview of the video"/> </a>
+                            <Link href="https://www.youtube.com/watch?v=jnVTPkCWzcI" target="blank"/> <img src={ Miniature } alt="A preview of the video"/> </a>
                             
                             <p> Kombat mechanics never seen before </p>
+    **/}
                         </div>
                     </div>
                 </div>
