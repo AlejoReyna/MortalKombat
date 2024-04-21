@@ -1,0 +1,39 @@
+.navbar-container {
+    background: linear-gradient(to left, #b99a59, #d4ad68);
+    height: 2.5rem;
+}
+.mk-logo {
+    width: 100px;
+    margin-left: 10px;
+}
+.nav-items {
+    list-style-type: none;
+    font-family: 'Mortal';
+    color: white;
+}
+
+.nav-item {
+    margin: 0 2rem;
+}
+
+.logo {
+    border-radius: 50%;
+    width: 160px;
+    height: 150px;
+}
+
+@media screen and (max-width:768px) {
+    .nav-item {
+        display: none;
+    }
+
+    .navbar {
+        height: 4rem;
+    }
+
+    .logo {
+        border-radius: 50%;
+        width: 110px;
+        height: 110px;
+    }
+}
