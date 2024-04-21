@@ -1,6 +1,7 @@
 import React from 'react';
 import './Homepage.css';
 import Miniature from './gameplay.jpg';
+import './animation.css';
 
 const Homepage = () => {
     return (

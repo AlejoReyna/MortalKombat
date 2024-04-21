@@ -1,0 +1,24 @@
+@keyframes aparecer {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  .title h1 {
+    animation: aparecer 2s ease-in-out;
+    animation-fill-mode: forwards;
+    opacity: 0;
+    animation-delay: 0.5s;
+  }
+
+  .title h6 {
+    animation: aparecer 2s ease-in-out;
+    animation-fill-mode: forwards;
+    opacity: 0;
+    animation-delay: 1.5s;
+  }
+  
+  
