@@ -1,0 +1,25 @@
+footer {
+    padding: 30px;
+    font-family: 'Courier New', Courier, monospace;
+    color: white;
+    background-color: black;
+}
+footerText {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 40px;
+    font-size: 15px;
+}
+
+.logoContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 90px;
+}
+
+.footerItem {
+    width: 100px;
+}

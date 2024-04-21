@@ -3,11 +3,22 @@
     font-family: 'Mortal';
 }
 
+.preview {
+    width: 350px;
+    border-radius: 3px;
+}
+
+
 .title #number {
     font-size: 90px;
 }
 .dragon-logo {
     width: 30rem;
+}
+
+.description-title {
+    color: white;
+    font-family: Mortal;
 }
 .title h1 {
     font-size: 3rem;
@@ -48,6 +59,7 @@
 
 /** Styles for the second page **/
 .container-fluid.second-page {
+    color: white;
     background-image: url('./Images/other-bg.png');
     background-repeat: no-repeat;
     background-size: cover;
@@ -57,17 +69,6 @@
 /** End of styles for the second page **/
 
 
-/** Styles for the third page **/
-.container-fluid.third-page {
-    background-image: url('../images/walpaper.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 100vh;
-    background-position: center;
-
-}
-/** End of styles for the third page **/
-
 
 /** Styles for the fourth page **/
 .container-fluid.fourth-page {
@@ -75,8 +76,15 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-
+    color: white;
     height: 100vh
+}
+
+.container-fluid.fourth-page button{
+    background-color: red;
+    border: 1px solid rgb(105, 0, 0);
+    font-family: Mortal;
+    border-radius: 2%;
 }
 /** End of styles for the third page **/
 

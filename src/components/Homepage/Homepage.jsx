@@ -1,9 +1,8 @@
 import React from 'react';
 import './Homepage.css';
-import Miniature from './gameplay.jpg';
 import './animation.css';
 import { Link } from 'react-router-dom';
-
+import Preview from './Images/preview.png';
 const Homepage = () => {
     return (
         <body>
@@ -25,9 +24,10 @@ const Homepage = () => {
 
 
                 {/** Block of code for the second page */}
-                <div className="container-fluid d-flex second-page justify-content-center align-items-center">
-                    <div className="row">
-                        <div className="col-12">
+                <div className="container-fluid second-page">
+                    <div className="row h-100">
+                        <div className="col-12 description-title d-flex justify-content-center align-items-center">
+                            Liu Kang has become crazy af!
                             {/** 
                             <h2> WATCH THE LAUNCH TRAILER </h2>  
                     
@@ -36,27 +36,24 @@ const Homepage = () => {
                             <p> Kombat mechanics never seen before </p>
     **/}
                         </div>
-                    </div>
-                </div>
-                {/** End of block of code for the second page */}
-
-
-                {/** Block of code for the third page */}
-                <div className="container-fluid third-page d-flex justify-content-center align-items-center">
-                    <div className="row">
-                        <div className="col-6 left-side">
-                            <div className="text">
-                                <h2> Tus personajes favoritos, tal y como los viste la primera vez</h2>
-                                
-                                <p> Esta entrega te trae de regreso hacia el inicio de la saga, siguiendo los acontecimientos de la ultima entrega. </p>
-                                
-
-                                <p> Liu Kang se ha convertido en dios y la linea temporal ha sido alterada.</p>
+                        <div className="row">
+                            <div className="col-6 d-flex justify-content-center align-items-center">
+                                <figure>
+                                <img className="preview" src={ Preview  } alt="The preview of the trailer"/>
+                                <figcaption> Click to watch the trailer </figcaption>
+                                </figure>
+                            </div>
+                            <div className="col-6">
+                                <p className="description"> 
+                                After winning control of the Hourglass, Liu Kang becomes the Keeper of Time, forging a New Era. 
+                                Peace between realms is disrupted by mounting tensions and a mysterious adversary. 
+                                Liu Kang realizes that not only are the realms in danger, but so is his new timeline and all of reality.
+                                </p>
                             </div>
                         </div>
                     </div>
                 </div>
-                {/** End of block of code for the third page */}
+                {/** End of block of code for the second page */}
 
                 
                 {/** Block of code for the fourth page */}
@@ -66,7 +63,9 @@ const Homepage = () => {
                             <div className="text">
                                 <h2 className="title"> Shang Tsung disponible como personaje jugable.</h2>
                                 <h2 className="title"> Exclusivo al preordenar </h2>
+                                <div className='button-container d-flex justify-content-center' >
                                 <button> Pre-ordena ahora </button>
+                                </div>
                             </div>
                         </div>
                     </div>
