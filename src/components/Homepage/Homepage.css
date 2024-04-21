@@ -3,8 +3,14 @@
     font-family: 'Mortal';
 }
 
-
+.title #number {
+    font-size: 90px;
+}
+.dragon-logo {
+    width: 30rem;
+}
 .title h1 {
+    font-size: 3rem;
     color: transparent;
     -webkit-background-clip: text;
     background-clip: text;
@@ -15,6 +21,7 @@
 
 /** Applies fire effect to the h6 phrase **/
 .title h6 {
+    font-size: 1.2rem;
     color: transparent;
     -webkit-background-clip: text;
     background-clip: text;
@@ -26,7 +33,7 @@
 
 /** Styles for the first page **/
 .container-fluid.first-page {
-    background-image: url("https://giffiles.alphacoders.com/209/209473.gif");
+    background-image: url("./Images/background.webp");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;

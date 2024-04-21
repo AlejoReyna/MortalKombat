@@ -21,4 +21,9 @@
     animation-delay: 1.5s;
   }
   
+  .dragon-logo {
+    animation: aparecer 2s ease-in-out;
+    animation-fill-mode: forwards;
+    opacity: 0;
+  }
   

@@ -2,6 +2,7 @@ import React from 'react';
 import './Homepage.css';
 import Miniature from './gameplay.jpg';
 import './animation.css';
+import Logo from './Images/mk-logo.png';
 
 const Homepage = () => {
     return (
@@ -13,7 +14,8 @@ const Homepage = () => {
                     <div className="row">
                         <div className="col-12">
                             <div className="title">
-                                <h1> MORTAL <span id="number"> 1 </span> KOMBAT </h1>
+                                
+                                <h1> MORTAL <span id="number"> 1 </span> KOMBAT </h1> 
                                 <h6 className='d-flex justify-content-center'>Presale now available</h6>
                             </div>
                         </div>
