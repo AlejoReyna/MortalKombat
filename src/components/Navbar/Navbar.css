@@ -1,6 +1,8 @@
 .navbar-container {
-    background-color: rgb(19, 18, 18);
+    background-image: url("./Images/attempt.gif");
     height: 2.5rem;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 .mk-logo {
     width: 100px;
