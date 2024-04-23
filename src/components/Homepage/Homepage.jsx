@@ -3,6 +3,8 @@ import './Homepage.css';
 import './animation.css';
 import { Link } from 'react-router-dom';
 import Preview from './Images/preview.png';
+import bgVideo from './Images/bg-video.mp4';
+
 const Homepage = () => {
     return (
         <body>
@@ -14,10 +16,10 @@ const Homepage = () => {
                         <div className="col-12">
                             <div className="title">
                                 
-                                <h1> MORTAL <span id="number"> 1 </span> KOMBAT </h1> 
+                                <h1 className='d-inline-block'> MORTAL </h1>  <span className="number d-inline-block"> 1 </span> <h1 className="d-inline-block"> KOMBAT </h1> 
                                 <h6 className='d-flex justify-content-center'>Presale now available</h6>
                                     <div className="d-flex justify-content-center">
-                                        <button> <Link to="/preorder"> Preorder now! </Link>  </button>
+                                        <button className='preorder-btn'> <Link to="/preorder"> Preorder now! </Link>  </button>
                                     </div>
                             </div>
                         </div>
@@ -59,6 +61,18 @@ const Homepage = () => {
                 </div>
                 {/** End of block of code for the second page */}
 
+                {/** Begining of the third page */}
+                <div className="container-fluid third-page d-flex">
+                    <div className="row">
+                        <div className="col-12">
+                            <video autoPlay loop muted className='img-fluid'>
+                            
+                                <source src={ bgVideo } type="video/mp4"/>
+                            </video>
+
+                        </div>
+                    </div>
+                </div>
                 
                 {/** Block of code for the fourth page */}
                 <div className="container-fluid fourth-page d-flex justify-content-center align-items-center">

@@ -8,8 +8,9 @@
     border-radius: 3px;
 }
 
-.title #number {
-    font-size: 90px;
+.title .number {
+    font-size: 88px;
+    margin: 0 15px;
 }
 .dragon-logo {
     width: 30rem;
@@ -20,6 +21,28 @@
     font-family: Mortal;
 }
 
+.preorder-btn {
+    background-image: url("../Navbar/Images/attempt.gif");
+    border-radius: 5px;
+    border: none;
+    width: 10rem;
+    height: 2rem;
+}
+
+.preorder-btn a {
+    text-decoration: none;
+    color: rgb(227, 138, 138);
+}
+   
+
+.title .number {
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-color:white;
+    background-image: url("https://giffiles.alphacoders.com/209/209473.gif");
+}
 .title h1 {
     font-size: 3.5rem;
     color: transparent;
@@ -50,10 +73,6 @@
     background-position: center;
     height: 100vh;
 }
-
-
-  
-
 /** End of styles for the first page **/
 
 
@@ -68,6 +87,27 @@
 }
 /** End of styles for the second page **/
 
+/** Styles for the third page **/
+.container-fluid.third-page {
+   height: 100vh;
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+   margin: 0;
+   background-color: black;
+   padding: 0px;
+}
+
+.video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/** End of the third page **/
 
 
 /** Styles for the fourth page **/

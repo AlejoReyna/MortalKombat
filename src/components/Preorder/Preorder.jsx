@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import Shang from './Images/shang.jpeg';
+import BgChanger from './BackgroundChanger/BgChanger';
 import './Preorder.css';
 import axios from 'axios';
 
@@ -25,12 +26,39 @@ import axios from 'axios';
     };
   
     return(
+
     <body>
+        <BgChanger/>
         <main>
             <div className="container-fluid preorder-page">
                 <div className="row ">
                     <div className="col-12">
-                        
+                    <div className="card mb-3" style={{ maxWidth: '100rem', backgroundColor: 'black' }}>
+      <div className="row g-0">
+        <div className="col-md-4">
+          <img src={ Shang } className="img-fluid rounded-start" alt="..." />
+        </div>
+        <div className="col-md-8">
+          <div className="card-body">
+            <h5 className="card-title" style={{ color: 'white', fontFamily: 'Mortal', fontSize: '38px' }}>
+              Beneficios
+            </h5>
+            <hr style={{ color: 'white' }} />
+            <ul className="card-list" style={{ color: 'white' }}>
+              <li>Shan Tsung como personaje jugable (Exclusivo)</li>
+              <li>Acceso anticipado a la beta del juego</li>
+              <li>Skin del actor Jean-Claude Van Damme para Johnny Cage</li>
+            </ul>
+            <p className="card-text" style={{ color: 'white', fontFamily: "'Asap Condensed', sans-serif", fontSize: '30px' }}>
+              Reserva haciendo click aquí {/* IGNORAR EL SIGUIENTE CÓDIGO, NO BORRAR */}
+              <span style={{ color: 'black' }}>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaagria</span>
+            </p>
+            <button className="presale">Registrarse a la preventa</button>
+          </div>
+        </div>
+      </div>
+    </div>
+                        {/** 
                         <div className="card bg-black">
                         
                             <div className="card-body">
@@ -65,6 +93,7 @@ import axios from 'axios';
                                 </div>
                             </div>
                         </div>
+                        */}
                     </div>
                 </div>
             </div>
