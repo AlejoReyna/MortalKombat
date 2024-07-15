@@ -75,41 +75,6 @@
 }
 /** End of styles for the first page **/
 
-
-/** Styles for the second page **/
-.container-fluid.second-page {
-    color: white;
-    background-image: url('./Images/other-bg.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    height: 100vh
-}
-/** End of styles for the second page **/
-
-/** Styles for the third page **/
-.container-fluid.third-page {
-   height: 100vh;
-   width: 100%;
-   height: 100%;
-   object-fit: cover;
-   margin: 0;
-   background-color: black;
-   padding: 0px;
-}
-
-.video-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-/** End of the third page **/
-
-
 /** Styles for the fourth page **/
 .container-fluid.fourth-page {
     background-image: url("https://64.media.tumblr.com/4af4aaeaec397b25fe27cbd791cec7ea/b17a5b9cd5f63ba7-a3/s540x810/c324517076f6fbae750375093476fcd91ce1133b.gif");
