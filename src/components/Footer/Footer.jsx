@@ -3,29 +3,49 @@ import './Footer.css';
 
 const Footer = () => {
     return (
-        <footer className='d-flex justify-content-center'>
-            <div className="logo-container">
-                <div className="row">
-                    <div className="col-12">
-                        <div className="logoContainer">
-                            <img className="footerItem" src="https://cdn-mk1.mortalkombat.com/static/wb-games-logo.svg" alt="WB Games Logo" />
-                            <img className="footerItem" src="https://cdn-mk1.mortalkombat.com/static/netherrealm.svg" alt="NetherRealm Logo" />
-                            <img className="footerItem" src="https://cdn-mk1.mortalkombat.com/static/ps5_tm.svg" alt="PS5 Logo" />
-                            <img className="footerItem" src="https://cdn-mk1.mortalkombat.com/static/xbox-series-x-s.svg" alt="Xbox Series X/S Logo" />
-                            <img className="footerItem" src="https://cdn-mk1.mortalkombat.com/static/nintendo-switch.svg" alt="Nintendo Switch Logo" />
-                            <img className="footerItem" src="https://cdn-mk1.mortalkombat.com/ratings/esrb/esrb-rp-fob.svg" alt="ESRB Rating Pending Logo" />
-                        </div>
-                    </div>
-                </div>
+        <footer className='d-flex justify-content-center '>
+            <div className="logos ">
+                <ul className="d-flex list-unstyled mt-3 justify-content-center">
+                    <li>
+                        <img className="logo-img" src="https://cdn-mk1.mortalkombat.com/static/wb-games-logo.svg"
+                             alt="WB Games Logo"/>
+                    </li>
 
-                <div className="row">
-                    <div className="col-12 ">
-                        <div className="footerText">
-                            <p> Software MORTAL KOMBAT 1 © 2023 Warner Bros. Entertainment Inc. Desarrollado por NetherRealm Studios. Unreal® Engine, copyright 1998-2023 Epic Games, Inc. Unreal, Unreal Technology y el logotipo de Powered by Unreal Technology son marcas registradas o marcas comerciales de Epic Games, Inc. Utiliza la compresión de datos Oodle Copyright y Bink Video (C) 1997-2023 de RAD Game Tools, Inc. EL LOGOTIPO DE NETHERREALM STUDIOS, MORTAL KOMBAT, EL LOGOTIPO DEL DRAGÓN y todos los personajes y elementos relacionados son marcas registradas y © 2023 Warner Bros. Entertainment inc. </p>
-                        </div>
-                    </div>
-                </div>
+                    <li>
+                        <img className="logo-img" src="https://cdn-mk1.mortalkombat.com/static/netherrealm.svg"
+                             alt="NetherRealm Logo"/>
+                    </li>
 
+                    <li>
+                        <img className="logo-img" src="https://cdn-mk1.mortalkombat.com/static/ps5_tm.svg"
+                             alt="PS5 Logo"/>
+                    </li>
+
+                    <li>
+                        <img className="logo-img" src="https://cdn-mk1.mortalkombat.com/static/xbox-series-x-s.svg"
+                             alt="Xbox Series X/S Logo"/>
+                    </li>
+
+                    <li>
+                        <img className="logo-img" src="https://cdn-mk1.mortalkombat.com/static/nintendo-switch.svg"
+                             alt="Nintendo Switch Logo"/>
+                    </li>
+                </ul>
+
+                <div className="text-center footer-disclaimer">
+                    <p>
+                        This React project was created by Alexis Alberto Reyna Sánchez as a portfolio piece to showcase
+                        coding skills.
+                    </p>
+                    <p>
+                        I am not affiliated with any of the companies mentioned here, nor do I own any of the visual
+                        elements presented.
+                    </p>
+                    <p>
+                        This website is for demonstration purposes only and is not for commercial use. All rights
+                        reserved to their respective owners.
+                    </p>
+                </div>
             </div>
         </footer>
     );

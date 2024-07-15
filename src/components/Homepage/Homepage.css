@@ -1,3 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Bona+Nova+SC:ital,wght@0,400;0,700;1,400&display=swap');
+
+.bona-nova-sc-regular-italic {
+    font-family: "Bona Nova SC", serif;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.fixed-video-height {
+    height: 60vh;
+}
 
 .title {
     font-family: 'Mortal';
@@ -29,8 +40,24 @@
     height: 2rem;
 }
 
-.preorder-btn a {
+
+.trailer-btn {
+    background-image: url("../Navbar/Images/attempt.gif");
+    border-radius: 5px;
+    border: none;
+    width: 13rem;
+    height: 2rem;
+}
+
+.description {
+    font-size: 1rem;
+}
+.preorder-btn a, .trailer-btn a {
     text-decoration: none;
+    color: rgb(227, 138, 138);
+}
+
+.red-text {
     color: rgb(227, 138, 138);
 }
    
@@ -66,15 +93,16 @@
 }
 
 /** Styles for the first page **/
-.container-fluid.first-page {
+.first-page {
     background-image: url("./Images/background.webp");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    height: 100vh;
 }
 /** End of styles for the first page **/
-
+.second-page {
+    background-color: black;
+}
 /** Styles for the fourth page **/
 .container-fluid.fourth-page {
     background-image: url("https://64.media.tumblr.com/4af4aaeaec397b25fe27cbd791cec7ea/b17a5b9cd5f63ba7-a3/s540x810/c324517076f6fbae750375093476fcd91ce1133b.gif");
@@ -91,6 +119,13 @@
     font-family: Mortal;
     border-radius: 2%;
 }
+
+.other-bg {
+    background-image: url("./Images/tea-house.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    }
 /** End of styles for the third page **/
 
 @media screen and (max-width:468px) {

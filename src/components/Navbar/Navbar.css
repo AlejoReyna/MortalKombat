@@ -1,9 +1,16 @@
 .navbar-container {
     background-image: url("./Images/attempt.gif");
-    height: 2.5rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+.moon-gif {
+    background-image: url("./Images/attempt.gif");
     background-repeat: no-repeat;
     background-size: cover;
 }
+
 
 .mk-logo {
     width: 100px;

@@ -1,36 +1,19 @@
 footer {
-    padding: 30px;
     font-family: 'Courier New', Courier, monospace;
     color: white;
     background-color: black;
 }
-footerText {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    margin: 40px;
-    font-size: 15px;
+
+.footer-disclaimer {
+    font-family: Tahoma;
 }
 
-.logoContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 90px;
-}
-
-.footerItem {
-    width: 100px;
+.logo-img {
+    width: 100px;  /* O el tamaño que prefieras */
+    height: 50px;  /* O el tamaño que prefieras */
+    object-fit: contain;  /* Mantiene la proporción de la imagen dentro del tamaño especificado */
+    margin-right: 5px;
 }
 
 
-@media screen and (max-width:468px) {
-    .footerItem {
-        width: 50px;
-    }
 
-    .footerText {
-        font-size: 10px;
-    }
-}
