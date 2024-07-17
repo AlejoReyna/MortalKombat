@@ -195,6 +195,15 @@
     font-family: 'Mortal';
 }
 
+.golden-text {
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-color:white;
+    background-image: url("../images/golden-gif.gif");
+}
+
 .popup-content {
     padding: 20px;
     border-radius: 10px;

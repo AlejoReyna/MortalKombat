@@ -26,12 +26,12 @@ const Homepage = () => {
         e.preventDefault();
         try {
             const response = await axios.post('http://localhost:5001/send-email', { email });
-            console.log('Correo enviado:', response.data);
-            alert('Correo enviado con éxito');
+            console.log('Email sent!:', response.data);
+            alert('Email sent! :)');
             setShowPopup(false);
         } catch (error) {
-            console.error('Error enviando el correo:', error);
-            alert('Hubo un error enviando el correo');
+            console.error('An error occurred:', error);
+            alert('There has been an error sending the mail');
         }
     };
 
@@ -74,7 +74,7 @@ const Homepage = () => {
                             <div className="row w-100 mt-5">
                                 <div className="col-2"></div>
                                 <div className="col-8 p-0 text-white title mx-4">
-                                    <div className="text-center red-text description">
+                                    <div className="text-center golden-text description">
                                         After eons of peace between the realms,
                                         ideologies grow, bringing in mounting tensions between the realms.
                                         When a mysterious adversary arrives, Liu Kang soon realizes that not only are the
@@ -103,11 +103,13 @@ const Homepage = () => {
                             </video>
                         </div>
                         <div className="w-100 w-md-50 h-md-100 d-flex align-items-center">
-                            <div className="text red-text text-center w-100">
+                            <div className="text golden-text text-center w-100">
                                 <h3 className="title">Shang Tsung available as playable character</h3>
                                 <h5 className="title">Exclusive in preorder</h5>
                                 <div className='button-container'>
-                                    <button className="preorder-btn text-white" onClick={handlePreorderClick}>Pre-order now</button>
+                                    <button className='preorder-btn red-text' onClick={handlePreorderClick}> Preorder
+                                        now!
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -118,15 +120,23 @@ const Homepage = () => {
 
             {showPopup && (
                 <div className="popup">
-                    <div className="popup-content">
+                    <div className="popup-content moon-gif h-50 d-flex flex-column justify-content-center align-items-center">
                         <button className="close-btn" onClick={handleClosePopup}>X</button>
-                        <h2>Pre-order Now</h2>
-                        <form onSubmit={handleFormSubmit}>
-                            <label>
-                                Email:
-                                <input type="email" value={email} onChange={handleEmailChange} required />
+                        <h2 className="golden-text mt-3 text-center">Pre-order Now</h2>
+                        <label className="text-center">
+                            <p className="red-text"> Type your email to receive a confirmation email </p>
+                        </label>
+                        <form onSubmit={handleFormSubmit} className="text-center">
+                            <label className="red-text">
+                                Email :
+                                <div className="w-100">
+                                    <input type="email" value={email} onChange={handleEmailChange}
+                                           required/>
+                                </div>
                             </label>
-                            <button type="submit">Submit</button>
+                            <div className="mt-3">
+                                <button className="border-0 golden-text" type="submit">Submit</button>
+                            </div>
                         </form>
                     </div>
                 </div>

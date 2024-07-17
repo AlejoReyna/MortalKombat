@@ -4,7 +4,6 @@ import Navbar from './components/Navbar/Navbar';
 import Homepage from './components/Homepage/Homepage';
 import Footer from './components/Footer/Footer';
 import Login from './Login';
-import AdminPage from './AdminPage';
 import './App.css';
 
 function App() {
@@ -20,10 +19,7 @@ function App() {
             <Routes>
                 <Route path="/" element={<Homepage />} />
                 <Route path="/login" element={<Login onLogin={handleLogin} />} />
-                <Route
-                    path="/admin"
-                    element={isAuthenticated ? <AdminPage /> : <Navigate to="/login" />}
-                />
+
             </Routes>
             <Footer />
         </Router>
