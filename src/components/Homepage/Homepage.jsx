@@ -1,12 +1,10 @@
-import React, { useEffect, useState, useRef } from 'react';
-
+import React, { useState } from 'react';
 import './Homepage.css';
 import './animation.css';
 import { Link } from 'react-router-dom';
 import bgVideo from './Images/bg-video.mp4';
 import tsungVideo from './Images/cutted-clip.mp4';
-
-
+import axios from 'axios';
 
 const Homepage = () => {
     const [showPopup, setShowPopup] = useState(false);
@@ -24,12 +22,18 @@ const Homepage = () => {
         setEmail(e.target.value);
     };
 
-    const handleFormSubmit = (e) => {
+    const handleFormSubmit = async (e) => {
         e.preventDefault();
-        console.log('Email submitted:', email);
-        setShowPopup(false);
+        try {
+            const response = await axios.post('http://localhost:5001/send-email', { email });
+            console.log('Correo enviado:', response.data);
+            alert('Correo enviado con éxito');
+            setShowPopup(false);
+        } catch (error) {
+            console.error('Error enviando el correo:', error);
+            alert('Hubo un error enviando el correo');
+        }
     };
-
 
     return (
         <div>
@@ -114,10 +118,9 @@ const Homepage = () => {
 
             {showPopup && (
                 <div className="popup">
-                    <div className="popup-content moon-gif">
+                    <div className="popup-content">
                         <button className="close-btn" onClick={handleClosePopup}>X</button>
-                        <h2 className="red-text">Pre-order now!</h2>
-                        <p> Once you write a mail direction here, it will send you an email </p>
+                        <h2>Pre-order Now</h2>
                         <form onSubmit={handleFormSubmit}>
                             <label>
                                 Email:
