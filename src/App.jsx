@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import Navbar from './components/Navbar/Navbar';
 import Homepage from './components/Homepage/Homepage';
 import Footer from './components/Footer/Footer';
-import Preorder from './components/Preorder/Preorder';
 import Login from './Login';
 import AdminPage from './AdminPage';
 import './App.css';
@@ -20,7 +19,6 @@ function App() {
             <Navbar />
             <Routes>
                 <Route path="/" element={<Homepage />} />
-                <Route path="/preorder" element={<Preorder />} />
                 <Route path="/login" element={<Login onLogin={handleLogin} />} />
                 <Route
                     path="/admin"
