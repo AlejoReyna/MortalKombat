@@ -42,8 +42,6 @@ const Homepage = () => {
             if (error.response && error.response.data) {
                 console.log(error.response.data.message);
                 setErrorMessage(error.response.data.message);
-                console.log(error.response);
-                setErrorMessage(error.response);
 
                 if (error.response.data.alreadyRegistered) {
                     setIsAlreadyRegistered(true);
