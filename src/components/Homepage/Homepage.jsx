@@ -28,7 +28,6 @@ const Homepage = () => {
     const handleEmailChange = (e) => {
         setEmail(e.target.value);
     };
-
     const handleFormSubmit = async (e, resend = false) => {
         e.preventDefault();
         try {
