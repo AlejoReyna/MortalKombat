@@ -3,7 +3,7 @@
   "routes": [
     {
       "src": "/api/send-email",
-      "dest": "MortalKombat/api/send-email.js"
+      "dest": "send-email.js"
     },
     {
       "src": "/(.*)",
