@@ -1,60 +1,57 @@
-const pool = require('./db');  // Importa el pool de conexiones
+// api/send-email.js
+const { Pool } = require('pg');
 const nodemailer = require('nodemailer');
 
-const transporter = nodemailer.createTransport({
-    host: 'smtp.office365.com',
-    port: 587,
-    secure: false,
-    auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS
+const pool = new Pool({
+    connectionString: process.env.DATABASE_URL,
+    ssl: {
+        rejectUnauthorized: false
     }
 });
 
 module.exports = async (req, res) => {
+    console.time('functionExecution');
+    let client;
     try {
         console.log('Function started');
+        client = await pool.connect();
+        console.log('Database connected');
 
-        if (req.method === 'POST') {
-            const { email, resend } = req.body;
-            console.log('Received request:', { email, resend });
+        const { email, resend } = req.body;
 
-            try {
-                console.log('Connecting to database');
-                const checkResult = await pool.query('SELECT * FROM preorders WHERE email = $1', [email]);
-                console.log('Database query completed');
+        // Aquí va tu lógica existente, por ejemplo, insertar en la base de datos
+        const queryText = 'INSERT INTO preorders(email, resend) VALUES($1, $2)';
+        await client.query(queryText, [email, resend]);
+        console.log('Database query executed');
 
-                if (checkResult.rows.length > 0 && !resend) {
-                    return res.status(400).json({ message: 'Este correo ya está registrado', alreadyRegistered: true });
-                }
-
-                if (!checkResult.rows.length) {
-                    console.log('Inserting new email');
-                    await pool.query('INSERT INTO preorders (email) VALUES ($1)', [email]);
-                }
-
-                console.log('Preparing to send email');
-                const mailOptions = {
-                    from: process.env.EMAIL_USER,
-                    to: email,
-                    subject: 'Gracias por tu preorden',
-                    text: '¡Gracias por preordenar Mortal Kombat! Pronto recibirás más información.'
-                };
-
-                await transporter.sendMail(mailOptions);
-                console.log('Email sent successfully');
-
-                res.status(200).json({ message: 'Preorden registrada con éxito y correo enviado' });
-            } catch (error) {
-                console.error('Error in main try block:', error);
-                res.status(500).json({ message: 'Error al procesar la solicitud', error: error.message });
+        // Configuración de nodemailer para enviar el correo
+        let transporter = nodemailer.createTransport({
+            service: 'hotmail',
+            auth: {
+                user: process.env.EMAIL_USER,
+                pass: process.env.EMAIL_PASS
             }
-        } else {
-            res.setHeader('Allow', ['POST']);
-            res.status(405).end(`Method ${req.method} Not Allowed`);
-        }
+        });
+
+        let mailOptions = {
+            from: process.env.EMAIL_USER,
+            to: email,
+            subject: 'Preorden Registrada',
+            text: 'Tu preorden ha sido registrada con éxito. Gracias por tu interés.'
+        };
+
+        await transporter.sendMail(mailOptions);
+        console.log('Email sent successfully');
+
+        console.log('Function completed successfully');
+        res.status(200).json({ message: 'Preorden registrada con éxito y correo enviado' });
     } catch (error) {
-        console.error('Unhandled error:', error);
-        res.status(500).json({ message: 'Internal server error', error: error.message });
+        console.error('Error:', error);
+        res.status(500).json({ message: 'Error interno del servidor', error: error.message });
+    } finally {
+        if (client) {
+            client.release();
+        }
+        console.timeEnd('functionExecution');
     }
 };
