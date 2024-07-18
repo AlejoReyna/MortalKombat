@@ -1,6 +1,13 @@
 {
   "version": 2,
   "routes": [
-    { "src": "/api/(.*)", "dest": "/api/$1" }
+    {
+      "src": "/api/send-email",
+      "dest": "MortalKombat/api/send-email.js"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "index.html"
+    }
   ]
 }
