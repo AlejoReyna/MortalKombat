@@ -32,7 +32,7 @@ const Homepage = () => {
     const handleFormSubmit = async (e, resend = false) => {
         e.preventDefault();
         try {
-            const response = await axios.post('http://localhost:5002/send-email', { email, resend });
+            const response = await axios.post('/api/send-email', { email, resend });
             console.log('Email sent!:', response.data);
             setSuccessMessage(response.data.message);
             setErrorMessage('');
