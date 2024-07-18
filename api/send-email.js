@@ -1,62 +1,62 @@
-// api/send-email.js
+const express = require('express');
 const { Pool } = require('pg');
+const cors = require('cors');
 const nodemailer = require('nodemailer');
 
+
+const app = express();
+app.use(cors({
+    origin: 'https://mortal-kombat-iota.vercel.app/'
+}));
+app.use(express.json());
+
 const pool = new Pool({
-    host: process.env.DB_HOST,
     user: process.env.DB_USER,
+    host: process.env.DB_HOST,
+    database: process.env.DB_NAME,
     password: process.env.DB_PASSWORD,
     port: process.env.DB_PORT,
-    database: process.env.DB_NAME,
-    ssl: {
-        rejectUnauthorized: false
+});
+
+const transporter = nodemailer.createTransport({
+    host: 'smtp.office365.com',
+    port: 587,
+    secure: false,
+    auth: {
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS
     }
 });
 
+app.post('/send-email', async (req, res) => {
+    const { email, resend } = req.body;
 
-module.exports = async (req, res) => {
-    console.time('functionExecution');
-    let client;
     try {
-        console.log('Function started');
-        client = await pool.connect();
-        console.log('Database connected');
+        const checkResult = await pool.query('SELECT * FROM preorders WHERE email = $1', [email]);
 
-        const { email, resend } = req.body;
+        if (checkResult.rows.length > 0 && !resend) {
+            return res.status(400).json({ message: 'Este correo ya está registrado',  alreadyRegistered: true });
+        }
 
-        // Aquí va tu lógica existente, por ejemplo, insertar en la base de datos
-        const queryText = 'INSERT INTO preorders(email, resend) VALUES($1, $2)';
-        await client.query(queryText, [email, resend]);
-        console.log('Database query executed');
+        if (!checkResult.rows.length) {
+            await pool.query('INSERT INTO preorders (email) VALUES ($1)', [email]);
+        }
 
-        // Configuración de nodemailer para enviar el correo
-        let transporter = nodemailer.createTransport({
-            service: 'hotmail',
-            auth: {
-                user: process.env.EMAIL_USER,
-                pass: process.env.EMAIL_PASS
-            }
-        });
-
-        let mailOptions = {
+        const mailOptions = {
             from: process.env.EMAIL_USER,
             to: email,
-            subject: 'Preorden Registrada',
-            text: 'Tu preorden ha sido registrada con éxito. Gracias por tu interés.'
+            subject: 'Gracias por tu preorden',
+            text: '¡Gracias por preordenar Mortal Kombat! Pronto recibirás más información.'
         };
 
         await transporter.sendMail(mailOptions);
-        console.log('Email sent successfully');
 
-        console.log('Function completed successfully');
-        res.status(200).json({ message: 'Preorden registrada con éxito y correo enviado' });
+        res.json({ message: 'Preorden registrada con éxito y correo enviado' });
     } catch (error) {
         console.error('Error:', error);
-        res.status(500).json({ message: 'Error interno del servidor', error: error.message });
-    } finally {
-        if (client) {
-            client.release();
-        }
-        console.timeEnd('functionExecution');
+        res.status(500).json({ message: 'Error al procesar la solicitud' });
     }
-};
+});
+
+const PORT = process.env.SERVER_PORT || 5001;
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
