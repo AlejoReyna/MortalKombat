@@ -1,12 +1,14 @@
 module.exports = async (req, res) => {
+    console.log('Environment variables:', {
+        DB_USER: process.env.DB_USER,
+        DB_HOST: process.env.DB_HOST,
+        DB_NAME: process.env.DB_NAME,
+        DB_PORT: process.env.DB_PORT,
+        EMAIL_USER: process.env.EMAIL_USER
+    });
+
     try {
-        console.log('Environment variables:', {
-            DB_USER: process.env.DB_USER,
-            DB_HOST: process.env.DB_HOST,
-            DB_NAME: process.env.DB_NAME,
-            DB_PORT: process.env.DB_PORT,
-            EMAIL_USER: process.env.EMAIL_USER
-        });
+
         console.log('Function started');
 
         if (req.method === 'POST') {
