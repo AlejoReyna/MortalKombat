@@ -9,6 +9,9 @@ import axios from 'axios';
 const Homepage = () => {
     const [showPopup, setShowPopup] = useState(false);
     const [email, setEmail] = useState('');
+    const [successMessage, setSuccessMessage] = useState('');
+    const [errorMessage, setErrorMessage] = useState('');
+    const [isAlreadyRegistered, setIsAlreadyRegistered] = useState(false);
 
     const handlePreorderClick = () => {
         setShowPopup(true);
@@ -16,23 +19,42 @@ const Homepage = () => {
 
     const handleClosePopup = () => {
         setShowPopup(false);
+        setSuccessMessage('');
+        setErrorMessage('');
+        setEmail('');
+        setIsAlreadyRegistered(false);
     };
 
     const handleEmailChange = (e) => {
         setEmail(e.target.value);
     };
 
-    const handleFormSubmit = async (e) => {
+    const handleFormSubmit = async (e, resend = false) => {
         e.preventDefault();
         try {
-            const response = await axios.post('http://localhost:5001/send-email', { email });
+            const response = await axios.post('http://localhost:5002/send-email', { email, resend });
             console.log('Email sent!:', response.data);
-            alert('Email sent! :)');
-            setShowPopup(false);
+            setSuccessMessage(response.data.message);
+            setErrorMessage('');
+            setIsAlreadyRegistered(false);
         } catch (error) {
             console.error('An error occurred:', error);
-            alert('There has been an error sending the mail');
+            if (error.response && error.response.data) {
+                console.log(error.response.data.message);
+                setErrorMessage(error.response.data.message);
+                if (error.response.data.alreadyRegistered) {
+                    setIsAlreadyRegistered(true);
+                }
+            } else {
+                setErrorMessage('There has been an error sending the mail');
+            }
         }
+    };
+
+    const handleSendAgain = () => {
+        setSuccessMessage('');
+        setEmail('');
+        setIsAlreadyRegistered(false);
     };
 
     return (
@@ -123,21 +145,48 @@ const Homepage = () => {
                     <div className="popup-content moon-gif h-50 d-flex flex-column justify-content-center align-items-center">
                         <button className="close-btn" onClick={handleClosePopup}>X</button>
                         <h2 className="golden-text mt-3 text-center">Pre-order Now</h2>
-                        <label className="text-center">
-                            <p className="red-text"> Type your email to receive a confirmation email </p>
-                        </label>
-                        <form onSubmit={handleFormSubmit} className="text-center">
-                            <label className="red-text">
-                                Email :
-                                <div className="w-100">
-                                    <input type="email" value={email} onChange={handleEmailChange}
-                                           required/>
-                                </div>
-                            </label>
-                            <div className="mt-3">
-                                <button className="border-0 golden-text" type="submit">Submit</button>
+                        {successMessage ? (
+                            <div className="text-center">
+                                <p className="green-text">{successMessage}</p>
+                                <button className="border-0 golden-text" onClick={handleClosePopup}>Close</button>
+                                <button className="border-0 golden-text" onClick={handleSendAgain}>Send Again</button>
                             </div>
-                        </form>
+                        ) : isAlreadyRegistered ? (
+                            <div className="text-center">
+                                <p className="red-text">{errorMessage}</p>
+                                <p>¿Deseas recibir el correo de nuevo?</p>
+                                <button className="border-0 golden-text" onClick={(e) => handleFormSubmit(e, true)}>Sí, enviar de nuevo</button>
+                                <button className="border-0 golden-text" onClick={handleClosePopup}>No, cerrar</button>
+                            </div>
+                        ) : (
+                            <>
+                                <label className="text-center">
+                                    <p className="red-text">Type your email to receive a confirmation email</p>
+                                </label>
+                                <form onSubmit={handleFormSubmit} className="text-center">
+                                    <label className="red-text">
+                                        Email :
+                                        <div className="w-100">
+                                            <input
+                                                type="email"
+                                                className="text-center"
+                                                value={email}
+                                                onChange={handleEmailChange}
+                                                required
+                                            />
+                                        </div>
+                                    </label>
+                                    <div className="mt-3">
+                                        <button className="border-0 golden-text" type="submit">Submit</button>
+                                    </div>
+                                </form>
+                                {errorMessage && !isAlreadyRegistered && (
+                                    <div className="mt-3 text-center red-text">
+                                        <p>{errorMessage}</p>
+                                    </div>
+                                )}
+                            </>
+                        )}
                     </div>
                 </div>
             )}

@@ -194,7 +194,9 @@
     z-index: 1000;
     font-family: 'Mortal';
 }
-
+.green-text {
+    color: #4CAF50;
+}
 .golden-text {
     color: transparent;
     -webkit-background-clip: text;
