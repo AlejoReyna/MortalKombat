@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar/Navbar';
 import Homepage from './components/Homepage/Homepage';
 import Footer from './components/Footer/Footer';
@@ -7,7 +7,7 @@ import Login from './Login';
 import './App.css';
 
 function App() {
-    const [isAuthenticated, setIsAuthenticated] = useState(false);
+    const [ setIsAuthenticated] = useState(false);
 
     const handleLogin = () => {
         setIsAuthenticated(true);
