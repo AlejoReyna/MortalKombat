@@ -3,6 +3,7 @@ import nodemailer from 'nodemailer';
 
 export async function POST(request) {
     try {
+
         console.log('Receiving request');
         const { email } = await request.json();
         console.log('Email received:', email);
@@ -12,7 +13,6 @@ export async function POST(request) {
         console.log('EMAIL_PORT:', process.env.EMAIL_PORT);
         console.log('EMAIL_USER:', process.env.EMAIL_USER);
         console.log('EMAIL_FROM:', process.env.EMAIL_FROM);
-        // No imprimas EMAIL_PASS por razones de seguridad
 
         console.log('Creating transporter...');
         const transporter = nodemailer.createTransport({
@@ -58,5 +58,6 @@ export async function POST(request) {
     } catch (error) {
         console.error('Detailed error:', error);
         return NextResponse.json({ error: 'Error sending email', details: error.message }, { status: 500 });
+
     }
 }
