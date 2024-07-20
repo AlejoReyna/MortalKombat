@@ -10,19 +10,18 @@ This website simulates the funcionality of a preorders system, where you inpit y
 - [Front-End](#front-end)
 - [Back-End](#back-end)
 
-## Front-End 
+## Front-End - Homepage component
 
-### Homepage
 
-## Dependencies
 
+### Dependencies
 - `react`: Core library for building the user interface and managing component state
 - `next/link`: For client-side navigation between pages
 - `axios`: HTTP client for making API requests to the backend
 - `react-dom`: Implied dependency for rendering React components in the browser
 - `@types/react`: TypeScript type definitions for React (implied by TypeScript usage)
 
-This component is the main interaction with the user, as it shows a trailer, an informative announce and the preorder functionality.
+The Homepage component is a React-based user interface for a Mortal Kombat 1 preorder landing page. It features multiple sections showcasing game content and a preorder functionality.
 
 ### handlePreorderClick
 This function is triggered when the user clicks the "Preorder now!" button. Its sole purpose is to display the pre-order popup by changing the showPopup state to true.
