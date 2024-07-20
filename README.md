@@ -1,5 +1,6 @@
 Mortal Kombat preorder website
 
+![mk-banner.png](..%2F..%2F..%2FDesktop%2Fmk-banner.png)
 
 This website simulates the funcionality of a preorders system, where you inpit your e-mail and in consecuence you get a mail, confirming your preorder. 
 
