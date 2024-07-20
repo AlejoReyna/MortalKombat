@@ -14,6 +14,14 @@ This website simulates the funcionality of a preorders system, where you inpit y
 
 ### Homepage
 
+## Dependencies
+
+- `react`: Core library for building the user interface and managing component state
+- `next/link`: For client-side navigation between pages
+- `axios`: HTTP client for making API requests to the backend
+- `react-dom`: Implied dependency for rendering React components in the browser
+- `@types/react`: TypeScript type definitions for React (implied by TypeScript usage)
+
 This component is the main interaction with the user, as it shows a trailer, an informative announce and the preorder functionality.
 
 ### handlePreorderClick
