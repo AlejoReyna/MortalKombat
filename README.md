@@ -1,4 +1,15 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Mortal Kombat preorder website
+
+
+This website simulates the funcionality of a preorders system, where you inpit your e-mail and in consecuence you get a mail, confirming your preorder. 
+
+Technologies used:
+-Typescript
+-Next.js
+-TailwindCSS
+-AWS RDS
+-Postgres
+
 
 ## Getting Started
 
