@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import axios from 'axios';
+import Image from 'next/image';
 import './Homepage.css';
 
 export default function Homepage() {
@@ -64,36 +65,37 @@ export default function Homepage() {
                 </div>
 
                 {/* Second page */}
-                <div className="container-fluid flex flex-col h-screen">
-                    <div className="relative flex-grow">
-                        <video autoPlay loop muted className="w-full h-full object-cover">
-                            <source src="../../public/Images/Homepage/bg-video.mp4" type="video/mp4"/>
-                        </video>
-                        <div className="moon-gif absolute inset-0 flex items-center justify-center">
-                            <div className="text-center text-white max-w-2xl mx-auto">
-                                <p className="text-red-500 mb-4">
-                                    After eons of peace between the realms,
-                                    ideologies grow, bringing in mounting tensions between the realms.
-                                    When a mysterious adversary arrives, Liu Kang soon realizes that not only are the
-                                    realms in danger, but so is his new timeline and all of reality.
-                                </p>
-                                <Link href="https://www.youtube.com/watch?v=jnVTPkCWzcI" target="_blank"
-                                      className="px-4 py-2 preorder-btn rounded hover:bg-red-700">
-                                    View the full trailer
-                                </Link>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    <div className="flex flex-col h-screen">
+      <div className="h-1/2 w-full relative">
+        <video autoPlay loop muted className="w-full h-full object-cover">
+          <source src='/bg-video.mp4' type="video/mp4"/>
+        </video>
+      </div>
+      <div className="moon-gif h-1/2 w-full bg-black flex items-center justify-center">
+        <div className="text-center text-white max-w-2xl mx-auto">
+          <p className="text-red-500 mb-4 title">
+            After eons of peace between the realms,
+            ideologies grow, bringing in mounting tensions between the realms.
+            When a mysterious adversary arrives, Liu Kang soon realizes that not only are the
+            realms in danger, but so is his new timeline and all of reality.
+          </p>
+          <Link href="https://www.youtube.com/watch?v=jnVTPkCWzcI" target="_blank"
+            className="inline-block px-4 py-2   rounded preorder-btn">
+            View the full trailer
+          </Link>
+        </div>
+      </div>
+    </div>
 
                 {/* Fourth page */}
                 <div className="container-fluid  h-screen flex flex-col md:flex-row">
                     <div className="w-full md:w-1/2 h-full">
                         <video autoPlay loop muted className="w-full h-full object-cover">
+                            <source src='/cutted-clip.mp4' type="video/mp4"/>
                         </video>
                     </div>
                     <div className="third-page w-full md:w-1/2 h-full flex items-center bg-black">
-                        <div className="text-center w-full text-red-500">
+                        <div className="text-center w-full text-red-500 title">
                             <h3 className="text-3xl font-bold mb-2">Shang Tsung available as playable character</h3>
                             <h5 className="text-xl mb-6">Exclusive in preorder</h5>
                             <button
