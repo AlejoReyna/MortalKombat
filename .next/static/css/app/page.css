@@ -88,3 +88,44 @@ background-position: center;
     text-align: center;
     position: relative;
 }
+/*!*******************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[3]!./components/Homepage/animation.css ***!
+  \*******************************************************************************************************************************************************************************************************************************************************************************/
+@keyframes aparecer {
+    0% {
+      opacity: 0;
+      
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+.title h1 {
+    animation: aparecer 2s ease-in-out;
+    animation-fill-mode: forwards;
+    opacity: 0;
+    animation-delay: 0.5s;
+  }
+
+ .title h6 {
+    animation: aparecer 2s ease-in-out;
+    animation-fill-mode: forwards;
+    opacity: 0;
+    animation-delay: 1.5s;
+  }
+  
+  .title .number {
+    animation: aparecer 2s ease-in-out;
+    animation-fill-mode: forwards;
+    opacity: 0;
+    animation-delay: 2s;
+  }
+
+   button.preorder-btn {
+    animation: aparecer 2s ease-in-out;
+    animation-fill-mode: forwards;
+    opacity: 0;
+    animation-delay: 2.5s;
+
+  }

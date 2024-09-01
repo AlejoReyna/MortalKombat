@@ -670,8 +670,20 @@ video {
 .w-full {
   width: 100%;
 }
+.w-11\/12 {
+  width: 91.666667%;
+}
+.w-2\/3 {
+  width: 66.666667%;
+}
 .max-w-2xl {
   max-width: 42rem;
+}
+.max-w-xl {
+  max-width: 36rem;
+}
+.max-w-lg {
+  max-width: 32rem;
 }
 .flex-grow {
   flex-grow: 1;
@@ -718,6 +730,12 @@ video {
 }
 .p-8 {
   padding: 2rem;
+}
+.p-10 {
+  padding: 2.5rem;
+}
+.p-20 {
+  padding: 5rem;
 }
 .px-2 {
   padding-left: 0.5rem;

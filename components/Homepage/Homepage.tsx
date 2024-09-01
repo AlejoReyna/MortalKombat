@@ -1,13 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
 import axios from 'axios';
 import Image from 'next/image';
 import './Homepage.css';
+import './animation.css';
 
 export default function Homepage() {
     const [showPopup, setShowPopup] = useState(false);
     const [email, setEmail] = useState('');
-
+    
     const handlePreorderClick = () => {
         setShowPopup(true);
     };
@@ -111,7 +112,7 @@ export default function Homepage() {
 
             {showPopup && (
                 <div className="popup fixed inset-0  flex justify-center items-center">
-                    <div className="popup-content p-8 rounded-lg">
+                    <div className="popup-content bg-black p-8 rounded-lg">
                         <button className="float-right text-xl" onClick={handleClosePopup}>X</button>
                         <h2 className="text-2xl mb-4">Pre-order Now</h2>
                         <form onSubmit={handleFormSubmit}>
@@ -127,7 +128,7 @@ export default function Homepage() {
                             </label>
                             <button
                                 type="submit"
-                                className="w-full mt-4 px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700"
+                                className="w-full mt-4 px-4 py-2  rounded preorder-btn"
                             >
                                 Submit
                             </button>
