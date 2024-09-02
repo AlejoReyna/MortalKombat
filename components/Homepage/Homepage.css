@@ -42,6 +42,9 @@ background-position: center;
     background-position: center;
 }
 
+.semired-text {
+    color: rgb(227, 138, 138);
+}
 .preorder-btn {
     color: rgb(227, 138, 138);
     text-decoration: none;

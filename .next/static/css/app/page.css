@@ -53,6 +53,9 @@ background-position: center;
     background-position: center;
 }
 
+.semired-text {
+    color: rgb(227, 138, 138);
+}
 .preorder-btn {
     color: rgb(227, 138, 138);
     text-decoration: none;
@@ -116,6 +119,13 @@ background-position: center;
   }
   
   .title .number {
+    animation: aparecer 2s ease-in-out;
+    animation-fill-mode: forwards;
+    opacity: 0;
+    animation-delay: 2s;
+  }
+  
+  .second-text {
     animation: aparecer 2s ease-in-out;
     animation-fill-mode: forwards;
     opacity: 0;

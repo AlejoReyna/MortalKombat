@@ -52,6 +52,10 @@ export default function Homepage() {
                             <h1 className="inline-block text-6xl font-bold">
                                 MORTAL
                                 <span className="number inline-block mx-2 text-7xl">1</span>
+                                </h1>
+
+                                <h1 className="inline-block text-6xl font-bold">
+
                                 KOMBAT
                             </h1>
                         <h6 className="mt-4">Presale now available</h6>
@@ -74,14 +78,14 @@ export default function Homepage() {
       </div>
       <div className="moon-gif h-1/2 w-full bg-black flex items-center justify-center">
         <div className="text-center text-white max-w-2xl mx-auto">
-          <p className="text-red-500 mb-4 title">
+          <p className="text-red-500 mb-4 title semired-text md:text-xl sm:text-sm second-text"  style={{ textShadow: "1px 1px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000" }}>
             After eons of peace between the realms,
             ideologies grow, bringing in mounting tensions between the realms.
             When a mysterious adversary arrives, Liu Kang soon realizes that not only are the
             realms in danger, but so is his new timeline and all of reality.
           </p>
           <Link href="https://www.youtube.com/watch?v=jnVTPkCWzcI" target="_blank"
-            className="inline-block px-4 py-2   rounded preorder-btn">
+            className="inline-block px-4 py-2 rounded preorder-btn">
             View the full trailer
           </Link>
         </div>
@@ -97,8 +101,8 @@ export default function Homepage() {
                     </div>
                     <div className="third-page w-full md:w-1/2 h-full flex items-center bg-black">
                         <div className="text-center w-full text-red-500 title">
-                            <h3 className="text-3xl font-bold mb-2">Shang Tsung available as playable character</h3>
-                            <h5 className="text-xl mb-6">Exclusive in preorder</h5>
+                            <h3 className="text-3xl font-bold mb-2 semired-text"  style={{ textShadow: "1px 1px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000" }}>Shang Tsung available as playable character</h3>
+                            <h5 className="text-xl mb-6"  style={{ textShadow: "1px 1px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000" }}>Exclusive in preorder</h5>
                             <button
                                 className="preorder-btn px-6 py-2 rounded-lg hover:bg-red-700"
                                 onClick={handlePreorderClick}
@@ -112,23 +116,25 @@ export default function Homepage() {
 
             {showPopup && (
                 <div className="popup fixed inset-0  flex justify-center items-center">
-                    <div className="popup-content bg-black p-8 rounded-lg">
-                        <button className="float-right text-xl" onClick={handleClosePopup}>X</button>
-                        <h2 className="text-2xl mb-4">Pre-order Now</h2>
+                    <div className="popup-content moon-gif p-8 rounded-lg">
+                        <button className="float-right text-xl semired-text " onClick={handleClosePopup}>X</button>
+                        <h2 className="text-2xl mb-4 semired-text ">Pre-order Now</h2>
+                        <p className="text-lg mb-4 semired-text"> Introduce your email to receive a mail confirming your order. </p>
+                        <p  className="text-sm mb-4 semired-text "> Dont worry, your email will not be stored </p>
                         <form onSubmit={handleFormSubmit}>
-                            <label className="block mb-2">
+                            <label className="block mb-2 semired-text ">
                                 Email:
                                 <input
                                     type="email"
                                     value={email}
                                     onChange={handleEmailChange}
                                     required
-                                    className="text-black w-full px-2 py-1 border rounded"
+                                    className="bg-black text-white text-center w-full px-2 py-1 rounded"
                                 />
                             </label>
                             <button
                                 type="submit"
-                                className="w-full mt-4 px-4 py-2  rounded preorder-btn"
+                                className="w-xl mt-4 px-4 py-2 rounded preorder-btn"
                             >
                                 Submit
                             </button>

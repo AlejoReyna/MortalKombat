@@ -5,12 +5,12 @@ export default function Footer() {
     return (
         <footer className='flex justify-center'>
             <div className="logos">
-                <ul className="flex list-none mt-3 justify-center space-x-4">
+                <ul className="flex list-none mt-5 justify-center space-x-4">
                     <li>
                         <Image
                             src="https://cdn-mk1.mortalkombat.com/static/wb-games-logo.svg"
                             alt="WB Games Logo"
-                            width={100}
+                            width={70}
                             height={50}
                         />
                     </li>
@@ -18,7 +18,7 @@ export default function Footer() {
                         <Image
                             src="https://cdn-mk1.mortalkombat.com/static/netherrealm.svg"
                             alt="NetherRealm Logo"
-                            width={100}
+                            width={80}
                             height={50}
                         />
                     </li>
@@ -28,6 +28,7 @@ export default function Footer() {
                             alt="PS5 Logo"
                             width={100}
                             height={50}
+                            className='mt-10'
                         />
                     </li>
                     <li>
@@ -36,19 +37,20 @@ export default function Footer() {
                             alt="Xbox Series X/S Logo"
                             width={100}
                             height={50}
+                            className='mt-11'
                         />
                     </li>
                     <li>
                         <Image
                             src="https://cdn-mk1.mortalkombat.com/static/nintendo-switch.svg"
                             alt="Nintendo Switch Logo"
-                            width={100}
+                            width={90}
                             height={50}
                         />
                     </li>
                 </ul>
 
-                <div className="text-center mt-4 text-sm text-gray-600">
+                <div className="text-center mt-4 text-xs mb-6 title">
                     <p className="mb-2">
                         This React project was created by Alexis Alberto Reyna Sánchez as a portfolio piece to showcase
                         coding skills.
